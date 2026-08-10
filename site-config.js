@@ -13,66 +13,79 @@ window.OLD_SOUL_GEM = {
   links: {
     etsy: "https://www.etsy.com/shop/OldSoulGemGND",
     instagram: "",
-    facebook: ""
+    facebook: "https://www.facebook.com/share/1HM9DEf6BP/"
   },
 
   collections: [
     {
-      id: "vintage-ring-edit",
-      name: "The Vintage Ring Edit",
-      eyebrow: "Founding Collection",
-      description: "A collected group of expressive rings chosen for saturated color, sculptural settings, and unmistakable vintage character.",
-      imageClass: "sprite-overview"
+      id: "one-of-one-opals",
+      name: "One-of-One Opals",
+      eyebrow: "Signature Collection",
+      description: "Sculptural opals, celestial lines, and expressive color developed as singular pieces rather than repeated styles.",
+      image: "assets/celestial-opal.webp",
+      imageAlt: "Celestial opal ring in yellow gold"
+    },
+    {
+      id: "signature-forms",
+      name: "Signature Forms",
+      eyebrow: "Essential Collection",
+      description: "Organic gold forms and wearable silhouettes designed to complement the bolder gemstone work.",
+      image: "assets/eternal-vine.webp",
+      imageAlt: "Sculptural braided yellow gold band"
     }
   ],
 
   pieces: [
     {
-      id: "green-halo-ring",
-      collection: "vintage-ring-edit",
-      name: "Green Halo Ring",
-      category: "Statement Ring",
-      materials: "Oval green center stone · sculptural halo setting",
-      description: "A vivid green oval framed by an ornate halo that gives the piece presence from every angle.",
-      story: "Selected for its color, proportion, and old-world glamour—this is the kind of ring that feels discovered rather than manufactured.",
-      status: "Availability through Etsy",
-      imageClass: "sprite-a",
+      id: "flor-de-vida",
+      collection: "one-of-one-opals",
+      name: "Flor de Vida",
+      category: "One-of-One Concept",
+      materials: "Opal · mixed-color gemstone bloom · yellow gold",
+      description: "A luminous opal surrounded by a bright, botanical burst of color and curling gold leaves.",
+      story: "Flor de Vida was imagined as a celebration of growth—soft at the center, vivid at the edges, and impossible to view from only one angle.",
+      status: "Design archive · Inquire",
+      image: "assets/flor-de-vida.webp",
+      imageAlt: "Flor de Vida opal ring with colorful gemstone halo and gold leaves",
       shopUrl: "https://www.etsy.com/shop/OldSoulGemGND"
     },
     {
-      id: "crystal-bloom-ring",
-      collection: "vintage-ring-edit",
-      name: "Crystal Bloom Ring",
-      category: "Floral Cluster Ring",
-      materials: "Faceted clear stones · dimensional floral setting",
-      description: "Petal-like stones gather into a bright, dimensional bloom with a profile that rewards a closer look.",
-      story: "A romantic cluster with the charm of a treasured heirloom and enough sparkle to stand confidently on its own.",
-      status: "Availability through Etsy",
-      imageClass: "sprite-b",
+      id: "celestial-orbit",
+      collection: "one-of-one-opals",
+      name: "Celestial Orbit",
+      category: "One-of-One Concept",
+      materials: "Black opal · multicolor gemstones · yellow gold",
+      description: "A vivid opal held inside an open orbital structure traced with stars, color, and negative space.",
+      story: "Built around the idea of a private universe, the stone remains the center while every accent follows its own orbit.",
+      status: "Design archive · Inquire",
+      image: "assets/celestial-opal.webp",
+      imageAlt: "Celestial black opal ring with orbital gold bands and gemstone accents",
       shopUrl: "https://www.etsy.com/shop/OldSoulGemGND"
     },
     {
-      id: "blue-halo-ring",
-      collection: "vintage-ring-edit",
-      name: "Blue Halo Ring",
-      category: "Oval Halo Ring",
-      materials: "Blue oval center stone · bright halo · detailed shoulders",
-      description: "A saturated blue center surrounded by a delicate halo and leaf-like shoulder details.",
-      story: "Bold color meets a refined silhouette in a piece that feels both timeless and immediately memorable.",
-      status: "Availability through Etsy",
-      imageClass: "sprite-c",
+      id: "blue-fire",
+      collection: "one-of-one-opals",
+      name: "Blue Fire",
+      category: "Sculptural Opal Concept",
+      materials: "Freeform opal · blue gemstones · white accents · yellow gold",
+      description: "An irregular blue opal becomes the landscape for a sweeping, asymmetrical halo of light and color.",
+      story: "Blue Fire preserves the natural edge and internal pattern of the stone, allowing the setting to move around it instead of forcing it into symmetry.",
+      status: "Design archive · Inquire",
+      image: "assets/blue-fire-opal.webp",
+      imageAlt: "Freeform blue opal ring with gold, sapphire, and bright stone accents",
       shopUrl: "https://www.etsy.com/shop/OldSoulGemGND"
     },
     {
-      id: "peridot-rope-ring",
-      collection: "vintage-ring-edit",
-      name: "Peridot-Tone Rope Ring",
-      category: "Textured Ring",
-      materials: "Fresh green oval stone · layered rope-texture setting",
-      description: "A luminous green oval wrapped in layered rope texture for a warm, handcrafted vintage effect.",
-      story: "Chosen for its unusual setting and optimistic color, this piece has a relaxed elegance that feels personal.",
-      status: "Availability through Etsy",
-      imageClass: "sprite-d",
+      id: "eternal-vine",
+      collection: "signature-forms",
+      name: "Eternal Vine",
+      category: "Sculptural Gold Band",
+      materials: "Interwoven yellow gold · polished finish",
+      description: "A continuous braided silhouette with the softness of a vine and the weight of a lasting signature piece.",
+      story: "Eternal Vine translates the organic movement found throughout Old Soul Gem into a quieter form made for everyday wear.",
+      status: "Design archive · Inquire",
+      image: "assets/eternal-vine.webp",
+      imageAlt: "Interwoven polished yellow gold band on a warm stone surface",
       shopUrl: "https://www.etsy.com/shop/OldSoulGemGND"
     }
   ]

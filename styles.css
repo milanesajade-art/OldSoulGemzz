@@ -9,7 +9,6 @@
   --muted: #6d726d;
   --line: rgba(29, 35, 31, 0.14);
   --shadow: 0 24px 70px rgba(13, 37, 30, 0.15);
-  --sheet: url("assets/ring-grid.jpg?v=osg-rebuild-1");
 }
 
 * {
@@ -34,6 +33,7 @@ body.menu-open {
 }
 
 img {
+  display: block;
   max-width: 100%;
 }
 
@@ -48,6 +48,11 @@ a {
 
 button {
   font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 4px;
 }
 
 h1,
@@ -283,32 +288,20 @@ h1 em {
   background: #d8d5cd;
 }
 
-.sprite {
-  background-image: var(--sheet);
-  background-repeat: no-repeat;
-  background-size: 300% 300%;
-  background-color: #d8d5cd;
-}
-
-.sprite-a { background-position: 0 0; }
-.sprite-b { background-position: 50% 0; }
-.sprite-c { background-position: 100% 0; }
-.sprite-d { background-position: 0 50%; }
-.sprite-d-detail { background-position: 50% 50%; }
-.sprite-c-detail { background-position: 100% 50%; }
-.sprite-b-detail { background-position: 0 100%; }
-.sprite-overview { background-position: 50% 100%; }
-.sprite-story { background-position: 100% 100%; }
-
 .hero-image {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 48%;
 }
 
-.hero-image::after {
+.hero-art::after {
   content: "";
   position: absolute;
   inset: 0;
+  pointer-events: none;
   background: linear-gradient(180deg, transparent 55%, rgba(13, 37, 30, 0.24));
 }
 
@@ -323,8 +316,11 @@ h1 em {
   transform: rotate(-2.5deg);
 }
 
-.hero-floating-card .sprite {
+.hero-floating-card img {
+  width: 100%;
   aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
 }
 
 .hero-floating-card p {
@@ -410,6 +406,10 @@ h1 em {
 .collection-card .collection-image {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   opacity: 0.88;
   transition: transform 500ms ease;
 }
@@ -501,7 +501,11 @@ h1 em {
 }
 
 .piece-image {
+  width: 100%;
+  height: 100%;
   min-height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .piece-copy {
@@ -591,8 +595,10 @@ h1 em {
   transform: rotate(-1deg);
 }
 
-.story-frame .sprite {
+.story-frame img {
+  width: 100%;
   aspect-ratio: 1.04;
+  object-fit: cover;
 }
 
 .story-copy,
@@ -630,11 +636,19 @@ h1 em {
   min-height: 620px;
 }
 
-.custom-visual .sprite:first-child {
+.custom-visual img {
+  width: calc(100% - 67px);
+  height: calc(100% - 110px);
+  object-fit: cover;
+  box-shadow: var(--shadow);
+}
+
+.custom-visual img:first-child {
   margin: 55px 12px 55px 55px;
 }
 
-.custom-visual .sprite:last-child {
+.custom-visual img:last-child {
+  height: calc(100% - 130px);
   margin: 110px 55px 20px 12px;
 }
 
@@ -753,8 +767,16 @@ dialog::backdrop {
   grid-template-columns: 0.9fr 1.1fr;
 }
 
-.dialog-image {
+.dialog-media {
   min-height: 510px;
+  background: #d7d1c7;
+}
+
+.dialog-image {
+  width: 100%;
+  height: 100%;
+  min-height: 510px;
+  object-fit: cover;
 }
 
 .dialog-copy {
@@ -951,11 +973,17 @@ dialog::backdrop {
     padding: 74px 21px;
   }
 
-  .custom-visual .sprite:first-child {
+  .custom-visual img {
+    width: calc(100% - 26px);
+    height: calc(100% - 56px);
+  }
+
+  .custom-visual img:first-child {
     margin: 28px 8px 28px 18px;
   }
 
-  .custom-visual .sprite:last-child {
+  .custom-visual img:last-child {
+    height: calc(100% - 84px);
     margin: 72px 18px 12px 8px;
   }
 
@@ -969,6 +997,7 @@ dialog::backdrop {
     grid-template-columns: 1fr;
   }
 
+  .dialog-media,
   .dialog-image {
     min-height: 350px;
   }

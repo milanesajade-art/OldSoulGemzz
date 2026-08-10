@@ -34,7 +34,7 @@
         const pieceCount = data.pieces.filter((piece) => piece.collection === collection.id).length;
         return `
           <article class="collection-card ${index === 0 ? "is-wide" : ""}" data-collection="${escapeHtml(collection.id)}">
-            <div class="collection-image sprite ${escapeHtml(collection.imageClass)}" role="img" aria-label="${escapeHtml(collection.name)} collection"></div>
+            <img class="collection-image" src="${escapeHtml(collection.image)}" alt="${escapeHtml(collection.imageAlt || collection.name + " collection")}" loading="lazy" decoding="async">
             <div class="collection-copy">
               <small>${escapeHtml(collection.eyebrow)} · ${pieceCount} ${pieceCount === 1 ? "piece" : "pieces"}</small>
               <h3>${escapeHtml(collection.name)}</h3>
@@ -63,7 +63,7 @@
     const collection = collectionMap.get(piece.collection);
     return `
       <article class="piece-card" data-collection="${escapeHtml(piece.collection)}">
-        <div class="piece-image sprite ${escapeHtml(piece.imageClass)}" role="img" aria-label="${escapeHtml(piece.name)}"></div>
+        <img class="piece-image" src="${escapeHtml(piece.image)}" alt="${escapeHtml(piece.imageAlt || piece.name)}" loading="lazy" decoding="async">
         <div class="piece-copy">
           <small>${escapeHtml(collection?.name || "Old Soul Gem")} · ${escapeHtml(piece.category)}</small>
           <h3>${escapeHtml(piece.name)}</h3>
@@ -96,8 +96,8 @@
 
     const links = [
       ["Shop Etsy", data.links.etsy],
-      ["Instagram", data.links.instagram],
-      ["Facebook", data.links.facebook]
+      ["Facebook", data.links.facebook],
+      ["Instagram", data.links.instagram]
     ].filter(([, url]) => Boolean(url));
 
     container.innerHTML = links.length
@@ -115,7 +115,9 @@
     if (!piece || !dialog) return;
 
     const collection = collectionMap.get(piece.collection);
-    $("#dialog-image").className = `dialog-image sprite ${piece.imageClass}`;
+    const dialogImage = $("#dialog-image");
+    dialogImage.src = piece.image;
+    dialogImage.alt = piece.imageAlt || piece.name;
     $("#dialog-eyebrow").textContent = `${collection?.name || "Old Soul Gem"} · ${piece.category}`;
     $("#dialog-title").textContent = piece.name;
     $("#dialog-description").textContent = piece.description;
@@ -172,6 +174,14 @@
       const bounds = dialog.getBoundingClientRect();
       const outside = event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom;
       if (outside) dialog.close();
+    });
+
+    dialog?.addEventListener("close", () => {
+      const image = $("#dialog-image");
+      if (image) {
+        image.removeAttribute("src");
+        image.alt = "";
+      }
     });
 
     const menuButton = $("#menu-button");
