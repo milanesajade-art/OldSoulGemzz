@@ -97,7 +97,7 @@
     const links = [
       ["Shop Etsy", data.links.etsy],
       ["Facebook", data.links.facebook],
-      ["Instagram", data.links.instagram]
+      ["Instagram & More", data.links.instagram]
     ].filter(([, url]) => Boolean(url));
 
     container.innerHTML = links.length
